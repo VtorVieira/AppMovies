@@ -12,6 +12,15 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
+/*
+criado dois retornos cores brancas e pretas
+a branca para versão Web e outra Mobile
+
+Por n ter conseguido manipular a cor com o material ui,
+essa foi a forma encontrada no momento para ser aplicada
+
+TODO: Necessário nova analise para deixa-lo dinamico!
+*/
 const pageWhite = [
   (
     <Link to='playing' style={{ color: 'white' }}>
@@ -48,7 +57,10 @@ const pageBlack = [
   ),
 ];
 
-
+/* 
+Solução aplicada do material UI
+https://mui.com/pt/material-ui/react-app-bar/
+*/
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 

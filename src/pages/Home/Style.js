@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledMain = styled.main`
   width: 100%;
-  height: 75vh;
+  height: 100vh;
 `;
 
 export const MovieList = styled.div`

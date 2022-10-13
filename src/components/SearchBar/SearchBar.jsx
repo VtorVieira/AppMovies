@@ -14,6 +14,7 @@ function SearchBar() {
     setSearch(target.value);
   };
 
+  /* Envia a pesquisa para o estado global e direciona para a pagina Search */
   async function sendSeach() {
     const result = await searchMoveis(search);
     setSeachFinished(result);

@@ -4,11 +4,13 @@ import getPopular from '../../Api/get-popular';
 
 import { DivPopular, DivCard } from './Style';
 
+/* Retorno da APi na esta aprensetando a imagem, foi necessário concatenar com a URL abaixo */
 const IMAGE_PATH = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
 function Popular() {
   const [movies, setMovies] = useState([]);
 
+  /* useEffect para carregamento dos filmes mais populares */
   useEffect(() => {
     async function getPopularMovies() {
       setMovies(await getPopular());
@@ -16,6 +18,9 @@ function Popular() {
     getPopularMovies();
   });
 
+  /*
+    https://pt.stackoverflow.com/questions/367097/converter-soma-de-minutos-em-formato-de-horas-ex-70min-0110-com-jquery
+  */
   function formatDate(date) {
     const datePart = date.match(/\d+/g),
       year = datePart[0],

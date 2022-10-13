@@ -9,6 +9,7 @@ const IMAGE_PATH = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 function Upcomming() {
   const [upcomming, setUpcomming] = useState([]);
 
+  /* useEffect para carregamento dos filmes em proximas estreias */
   useEffect(() => {
     async function getUpcomming() {
       setUpcomming(await getUpcommingMoveis());

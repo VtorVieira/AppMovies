@@ -10,6 +10,7 @@ import {
   HrPosition,
 } from './Style';
 
+/* Retorno da APi na esta aprensetando a imagem, foi necessário concatenar com a URL abaixo */
 const DETAIL_IMAGE_PATH = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
 
 function Reviews() {
@@ -18,6 +19,7 @@ function Reviews() {
 
   const { id } = useParams();
 
+  /* useEffect para carregamento das revisões do filme clicado */
   useEffect(() => {
     async function reviews() {
       setReviews(await getReviews(id));
@@ -25,6 +27,7 @@ function Reviews() {
     reviews();
   }, [id]);
 
+  /* useEffect para carregamento da imagem do filme */
   useEffect(() => {
     async function image() {
       setImage(await getDetails(id));
@@ -32,6 +35,10 @@ function Reviews() {
     image();
   }, [id]);
 
+
+  /*
+    https://pt.stackoverflow.com/questions/367097/converter-soma-de-minutos-em-formato-de-horas-ex-70min-0110-com-jquery
+  */
   function formatDate(date) {
     const datePart = date.match(/\d+/g),
       year = datePart[0],

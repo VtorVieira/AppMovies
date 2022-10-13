@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
 import Popular from './pages/Popular/Popular';
 import Details from './pages/Details/Details';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import Reviews from './pages/Reviews/Reviews';
 import Footer from './components/Footer/Footer';
 

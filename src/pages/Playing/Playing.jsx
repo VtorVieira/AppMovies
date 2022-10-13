@@ -13,6 +13,7 @@ const IMAGE_PATH = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 function Playing() {
   const [movies, setMovies] = useState([]);
 
+  /* useEffect para carregamento dos filmes em cartazes */
   useEffect(() => {
     async function getMovies() {
       setMovies(await nowPlaying());
@@ -20,6 +21,9 @@ function Playing() {
     getMovies();
   });
 
+  /*
+    https://pt.stackoverflow.com/questions/367097/converter-soma-de-minutos-em-formato-de-horas-ex-70min-0110-com-jquery
+  */
   function formatDate(date) {
     const datePart = date.match(/\d+/g),
       year = datePart[0],

@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import SeachContext from '../../context/searchContext';
 import { DivSearch, DivCard } from './Style';
 
+/* Retorno da APi na esta aprensetando a imagem, foi necessário concatenar com a URL abaixo */
 const IMAGE_PATH = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
 function Search() {
+  /* Estado global recebendo a pequisa da pagina inicial */
   const { searchFinished } = useContext(SeachContext);
 
+  /* Pagina carrega após o cliente clicar em pesquisar */
   return (
     <div>
       <DivSearch>

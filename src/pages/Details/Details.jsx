@@ -14,8 +14,8 @@ import {
   ParagrahPosition,
 } from './Style';
 
+/* Retorno da APi na esta aprensetando a imagem, foi necessário concatenar com a URL abaixo */
 const DETAIL_IMAGE_PATH = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
-
 const RECOMMENDATION_IMAGE_PATH = 'https://image.tmdb.org/t/p/w250_and_h141_face/';
 
 function Details() {
@@ -24,6 +24,7 @@ function Details() {
 
   const { id } = useParams();
 
+  /* useEffect para carregamento dos detalhes do filme */
   useEffect(() => {
     async function detail() {
       setMovieDetails(await getDetails(id));
@@ -31,6 +32,7 @@ function Details() {
     detail();
   }, [id]);
 
+  /* useEffect para carregamento das recomendacoes de filmes */
   useEffect(() => {
     async function recommendation() {
       setRecommendation(await getRecommendations(id));
@@ -38,6 +40,9 @@ function Details() {
     recommendation();
   }, [id]);
 
+  /*
+  https://stackoverflow.com/questions/2086744/javascript-function-to-convert-date-yyyy-mm-dd-to-dd-mm-yy
+  */
   function converter(minutos) {
     const horas = Math.floor(minutos / 60);
     const min = minutos % 60;
@@ -47,6 +52,9 @@ function Details() {
     return `${textoHoras}h ${textoMinutos}m`;
   };
 
+  /*
+    https://pt.stackoverflow.com/questions/367097/converter-soma-de-minutos-em-formato-de-horas-ex-70min-0110-com-jquery
+  */
   function formatDate(date) {
     const datePart = date.match(/\d+/g),
       year = datePart[0],
